@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <script>
+    function calcularNumeros() {
+      var numero = parseInt(document.getElementById("numero").value);
+      var numerosImpares = [];
+      var sumaPares = 0;
+
+      for (var i=1;i<= numero;i++) {
+        if (i % 2 !== 0) {
+          numerosImpares.push(i);
+        } else {
+          sumaPares += i;
+        }
+      }
+
+      document.getElementById("impares").innerHTML = "Números impares: " + numerosImpares.join(", ");
+      document.getElementById("sumaPares").innerHTML = "Suma de los números pares: " + sumaPares;
+    }
+  </script>
+</head>
+<body>
+  
+  <label for="numero">Ingrese un número:</label>
+  <input type="number" id="numero">
+  <button onclick="calcularNumeros()">Calcular</button>
+
+ 
+  <p id="impares"></p>
+  <p id="sumaPares"></p>
+</body>
+</html>
